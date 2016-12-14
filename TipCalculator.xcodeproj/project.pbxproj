@@ -83,6 +83,7 @@
 				8DA1C39C1E00BA4E005AB7D0 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		8DA1C39C1E00BA4E005AB7D0 /* Products */ = {
 			isa = PBXGroup;
