@@ -33,9 +33,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
 It is my first time to build an iOS app and use Swift so it took me a long time to get familiar with 
 the syntax.
+
 Also, I met an unresolvable problem that my app can't launch the number keyboard with decimals.
 The output from Xcode is "Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad;
 using 1316927560_PortraitChoco_iPhone-Simple-Pad_Default"
