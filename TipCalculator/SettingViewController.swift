@@ -12,6 +12,7 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var tipController: UISegmentedControl!
     
+    @IBOutlet weak var DefaultController: UISegmentedControl!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -22,17 +23,17 @@ class SettingViewController: UIViewController {
         let defaults = UserDefaults.standard
         if(tipController.selectedSegmentIndex == 0) {
             defaults.set([0.1,0.15,0.2], forKey: "Percentages")
-            defaults.set(0, forKey: "Index")
+            defaults.set(0, forKey: "Index1")
             defaults.synchronize()
         }
         if(tipController.selectedSegmentIndex == 1) {
             defaults.set([0.15,0.18,0.2], forKey: "Percentages")
-            defaults.set(1, forKey: "Index")
+            defaults.set(1, forKey: "Index1")
             defaults.synchronize()
         }
         if(tipController.selectedSegmentIndex == 2) {
             defaults.set([0.18,0.2,0.25], forKey: "Percentages")
-            defaults.set(2, forKey: "Index")
+            defaults.set(2, forKey: "Index1")
             defaults.synchronize()
         }
     }
@@ -42,10 +43,18 @@ class SettingViewController: UIViewController {
         let defaults = UserDefaults.standard
         defaults.synchronize()
         
-        let index = defaults.integer(forKey: "Index")
-        tipController.selectedSegmentIndex = index
+        let index1 = defaults.integer(forKey: "Index1")
+        tipController.selectedSegmentIndex = index1
+        
+        let index2 = defaults.integer(forKey: "Index2")
+        DefaultController.selectedSegmentIndex = index2
     }
 
+    @IBAction func changeDefault(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(DefaultController.selectedSegmentIndex, forKey: "Index2")
+        
+    }
     /*
     // MARK: - Navigation
 

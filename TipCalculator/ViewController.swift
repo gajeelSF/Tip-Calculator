@@ -26,6 +26,10 @@ let defaults = UserDefaults.standard
         let defaults = UserDefaults.standard
         defaults.synchronize()
         
+        let defaultIndex = defaults.integer(forKey: "Index2")
+        
+        PercentageControl.selectedSegmentIndex = defaultIndex
+        
         Percentage = defaults.array(forKey: "Percentages") as! [Double]
         
         for i in 0..<3 {

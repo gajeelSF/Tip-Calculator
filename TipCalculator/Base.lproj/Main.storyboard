@@ -138,11 +138,32 @@
                                     <action selector="changeTip:" destination="REB-7g-Phe" eventType="valueChanged" id="vuj-pU-MrR"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set Default Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pb1-VX-Eok">
+                                <rect key="frame" x="16" y="175" width="291" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="p2J-Cj-hQo">
+                                <rect key="frame" x="16" y="224" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="Third"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeDefault:" destination="REB-7g-Phe" eventType="valueChanged" id="iLh-Pk-8W8"/>
+                                    <action selector="changeTip:" destination="REB-7g-Phe" eventType="valueChanged" id="uuV-iZ-2fS"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tq0-lh-Pyf"/>
                     <connections>
+                        <outlet property="DefaultController" destination="p2J-Cj-hQo" id="Ip4-Rw-YKM"/>
                         <outlet property="tipController" destination="DcI-Jk-5Rf" id="H0u-LG-RNn"/>
                     </connections>
                 </viewController>
