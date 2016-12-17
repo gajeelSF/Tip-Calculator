@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 let defaults = UserDefaults.standard
     
 @IBOutlet weak var PercentageControl: UISegmentedControl!
+    @IBOutlet weak var TipNum: UILabel!
     @IBOutlet weak var TotalNumLabel: UILabel!
     @IBOutlet weak var BillFilled: UITextField!
     @IBOutlet weak var SplitedNum: UILabel!
@@ -43,6 +44,8 @@ let defaults = UserDefaults.standard
         let billNum = (Double)(BillFilled.text!) ?? 0
         let tip = billNum * Percentage[PercentageControl.selectedSegmentIndex]
         
+        TipNum.text = String(format: "Tips: $%0.2f", tip)
+        
         if(Split.value == 1) {
             TotalNumLabel.text = String(format: "$%0.2f", tip+billNum)
         }
@@ -57,6 +60,7 @@ let defaults = UserDefaults.standard
         let billNum = (Double)(BillFilled.text!) ?? 0
         
         let tip = billNum * Percentage[PercentageControl.selectedSegmentIndex]
+        TipNum.text = String(format: "Tips: $%0.2f", tip)
         
         if(Split.value == 1) {
             TotalNumLabel.text = String(format: "$%0.2f", tip+billNum)
@@ -81,7 +85,7 @@ let defaults = UserDefaults.standard
         let billNum = (Double)(BillFilled.text!) ?? 0
         
         let tip = billNum * Percentage[PercentageControl.selectedSegmentIndex]
-        //TipNumLabel.text = String(format: "$%0.2f", tip)
+        TipNum.text = String(format: "Tips: $%0.2f", tip)
         if(Split.value == 1) {
             TotalNumLabel.text = String(format: "$%0.2f", tip+billNum)
         }
