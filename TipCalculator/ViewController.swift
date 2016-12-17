@@ -29,8 +29,12 @@ let defaults = UserDefaults.standard
         let defaultIndex = defaults.integer(forKey: "Index2")
         
         PercentageControl.selectedSegmentIndex = defaultIndex
-        
+        if(defaults.array(forKey: "Percentages") == nil) {
+            Percentage = [0.10, 0.15, 0.20]
+        }
+        else {
         Percentage = defaults.array(forKey: "Percentages") as! [Double]
+        }
         
         for i in 0..<3 {
             PercentageControl.setTitle("\((Int)(Percentage[i]*100))%", forSegmentAt: i)
